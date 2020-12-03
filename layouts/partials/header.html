@@ -6,20 +6,25 @@
 	  
 	  <div class="w3-container w3-half">
 		  
-		  <a class="w3-left w3-padding"> <i class="far fa-envelope"></i> Conveniently located in South Park, Pennsylvania </a>
+		  <a class="w3-left w3-padding"> <i class="far fa-envelope"></i> Conveniently located in {{ .Site.Params.location }} </a>
 		  
 	  </div>
 	  
 	  <div class="w3-container w3-rest w3-stretch test-theme">
-		  <a class="w3-right w3-padding"> <i class="far fa-envelope"></i> information@wonderoflearningcenter.com </a>
-		  <a class="w3-right w3-padding"> <i class="fas fa-phone"></i> 412-555-555 </a>
+		  
+		  {{ range .Site.Params.contact }}
+		  
+		  <a class="w3-right w3-padding"> <i class={{ .icon }}></i> {{ .contact }} </a>
+		  
+		  {{ end }}
+		  
 	  </div>
   </div>
   
   <div class="w3-container w3-row w3-stretch sapling-theme-1 w3-card-4" style="max-height:75px">
 	
 	  <div class="w3-container w3-half w3-padding-large w3-left">
-		<a class="fondamento sapling-theme-1" style="font-size:2.5vw;">Wonder of...Learning Center</a>
+		<a class="fondamento sapling-theme-1" style="font-size:2.5vw;">  {{ .Site.Params.companyName }}</a>
 		<!--
 	  <a href="{{ "/" }}"><img src="/images/wo-logo_1.png" class="w3-image"></img></a>
 		-->
@@ -29,9 +34,6 @@
 	
       {{ range .Site.Menus.main }}
         <a class="w3-button w3-round-large sapling-theme-3 sapling-theme-hover sapling-theme-border" style="font-size:1.5vw" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
- <!--
-        <a class="sapling-text-dark" style="font-size:1.5vw;text-decoration:none" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
- -->
  
       {{ end }}
     </div>
@@ -42,6 +44,8 @@
 
 <div class="w3-container test-theme">
 </div>
+
+
       <!--
 <div id="topSize" class="w3-top w3-row w3-blue-theme sapling-text-dark w3-card-4" style="max-height:75px">
 

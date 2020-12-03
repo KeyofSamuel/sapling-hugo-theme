@@ -3,6 +3,16 @@
 
 This theme is in development and not ready for use...yet
 
+## Adding content to a site
+
+### Header information
+
+#### Contact Information
+Update the params.contact entries in config.toml to add or edit contact information.
+
+#### Location
+Update the Site params location entry to add or edit the location information.
+### Covers
 
 ## Submodule Instructions
 
@@ -13,16 +23,13 @@ This theme is in development and not ready for use...yet
 Make sure the config file has a module import
 [[module.imports]]
   path = "github.com/KeyofSamuel/sapling-hugo-theme"
-  # Sapling
+  \# Sapling
 
 this is going to create a go.mod file in the root of your project. In the excellent Discourse discussion “Hugo modules for ‘dummies’,” there’s a bit of ambiguity on what to pass to hugo mod init. If we take the Hugo documentation website as a guide, it’s a good practice to use your repository name. It makes for clear and easy reading, too: module github.com/gohugoio/hugoDocs is more obvious to me than the name of a theme or other label.
 
 Add a theme as a Hugo module
 Now for the fun part: let’s pull in a theme. Update the: [module]
 
-[[module.imports]]
-    path = "path-to-theme"
-    # project theme
 Note well that this path does not want a protocol — path = "gitlab.com/neotericdesign-tools/cosette" but no https://. As a standard practice, I like to note in a comment that this is the theme. Hugo is smart and mounts this as if it were at /themes/your-theme/, but it’s nice to be explicit.
 
 Get the project’s module dependencies
