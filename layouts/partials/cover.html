@@ -1,0 +1,32 @@
+<div class="w3-content" style="max-width:100%;margin-top:80px">
+
+  {{ range .Site.Params.cover }}
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center">
+    <img src={{ .image }} style="width:100%">
+    <div class="w3-display-bottomright w3-container sapling-text-dark w3-padding sapling-blue">
+      <a>{{ .credit }}</a>
+    </div>
+  </div>
+  {{ end }}
+	
+</div>
+
+<script>
+// Automatic Slideshow - change image every 8 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 8000);    
+}
+
+</script>
