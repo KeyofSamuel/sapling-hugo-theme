@@ -1,12 +1,15 @@
 <div class="w3-content" style="max-width:100%;margin-top:80px">
 
-  {{ range .Site.Params.cover }}
   <!-- Automatic Slideshow Images -->
+  {{ range .Site.Params.cover }}
   <div class="mySlides w3-display-container w3-center">
+    
     <img src={{ .image }} style="width:100%">
+    
     <div class="w3-display-bottomright w3-container sapling-text-dark w3-padding sapling-blue">
       <a>{{ .credit }}</a>
     </div>
+  
   </div>
   {{ end }}
 	
