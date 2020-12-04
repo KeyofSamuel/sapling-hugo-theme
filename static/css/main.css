@@ -4,22 +4,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 .stdFont {font-family: "Roboto", sans-serif;}
 
-.tangerine {font-family: "Tangerine";}
-.marck {font-family: "Marck Script";}
-.playball {font-family: "Playball";}
 .fondamento{font-family: "Fondamento";}
-.montez {font-family: "Montez";}
-.spirax {font-family: "Spirax", cursive;}
-.drsugiyama {font-family: "Dr Sugiyama", cursive;}
-.rugeboogie {font-family: "Ruge Boogie", cursive;}
-.mrbedfort {font-family: "Mr Bedfort", cursive;}
-.mrssheppards {font-family: "Mrs Sheppards", cursive;}
-.condiment {font-family: "Condiment", cursive;}
-.aguafina {font-family: "Aguafina Script", cursive;}
-.mrdehaviland {font-family: "Mr De Haviland", cursive;}
-.aladin {font-family: "Aladin", cursive;}
-.mrdafoe {font-family: "Mr Dafoe", cursive;}
-.cookie {font-family: "Cookie", cursive;}
+
+.rochester{font-family: 'Rochester', cursive;}
+.butterflykids{font-family: 'Butterfly Kids', cursive;}
+.cherryswash{font-family: 'Cherry Swash', cursive;}
+.greatvibes{font-family: 'Great Vibes', cursive;}
+.amita{font-family: 'Amita', cursive;}
+
 
 .sapling-blue {background-color:#43b5a0 !important}
 .sapling-pink {background-color:#d8065a !important}
