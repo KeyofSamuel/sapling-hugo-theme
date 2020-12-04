@@ -31,10 +31,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 .sapling-theme-2 {color:#fdedb9 !important; background-color:#860326 !important}
 .sapling-theme-3 {color:#28000b !important; background-color:#a3a598 !important}
 .sapling-theme-4 {color:#28000b !important; background-color:#fdedb9 !important}
-.sapling-theme-hover:hover {color:#28000b !important; background-color:#f48501 !important}
+.sapling-theme-hover:hover {color:#fdedb9 !important; background-color:#6b021e !important}
 .sapling-theme-border {
   border-style: solid;
-  border-color: #f48501;
+  border-color: #28000b;
 }
 
 # Blue/Teal
