@@ -1,54 +1,38 @@
+{{ "<!-- Index Body -->" | safeHTML }}
 <div class="w3-container w3-stretch sapling-theme-2">
 	<a>&nbsp;</a>
 </div>	
 
-
+{{ "<!-- Index Body -->" | safeHTML }}
 <div class="w3-row">
+  <div class="w3-container w3-third w3-card-4 w3-center">
+    <div class="w3-container w3-stretch w3-padding-large sapling-theme-1 sapling-text-dark" style="font-size:2vw">Current Events</div>
+    
+      {{ "<!-- Events -->" | safeHTML }}
+      <div class="w3-container w3-stretch">
+        {{range ( where site.RegularPages "Section" "events" | first 5 ) }}
+          <div>
+            <div class="post-title sapling-text-dark">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+              </div>
+          </div>
+          
+          <div>
+            {{ partial "current_events.html" . }}
+          </div>
+          <div class="post-item post-summary markdown-body">
+            {{ .Summary }}
+          </div>
+        {{ end }}
+      </div>
 
-  <div class="w3-container w3-third w3-card-4 sapling-theme-1 w3-center">
-    <a class="w3-padding-large" style="font-size:2vw">Current Events</a>
-	
   </div>
 
+  {{ "<!-- About-Us -->" | safeHTML }}
   <div class="w3-container w3-padding-large w3-center w3-rest sapling-text-dark">
-    <a class="w3-padding-large" style="font-size:2vw">Welcome - We are Wonder Of... daycare.  Conveniently located in the South Hills of Pittsburgh.  Bring us all your little diamonds in the rough.</a>
+    {{ with .Site.GetPage "/sitepages/about-index.md" }}
+    <a class="w3-padding-large" style="font-size:2vw">{{ .Content }}</a>
+    {{ end }}
   </div>
 
 </div>
-
-<!--
-
-
-
-
-<div class="w3-row">
-
-  <div class="w3-col m2 l2 w3-theme-l3">
-  S
-  </div>
-
-  <div class="w3-col s12 m8 l8 w3-center">
-    <span>
-      Our Philosophy and core values...
-    </span>
-    <span class="w3-ul">
-    <li>Test</li>
-    <li>Test</li>
-    </span>
-  </div>
-
-  <div class="w3-col m2 l2 w3-theme-l3">
-  S
-  </div>
-</div>
-
-
-
-
-
-Accreditations, Awards and Accolades
-
-</div>
-
-
--->
