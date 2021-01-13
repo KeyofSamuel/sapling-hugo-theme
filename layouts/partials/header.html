@@ -20,11 +20,11 @@
     <div class="w3-container w3-half w3-padding-large w3-left">
 	  
       {{ "<!-- Large Logo -->" | safeHTML }}
-      <a id="LargeLogo" href="{{ "/" }}"><img src="/images/logo.png" class="w3-image w3-card w3-white w3-animate-opacity" style="max-width:200px;"></img></a>
+      <a id="LargeLogo" href="{{ "/" }}"><img src="{{ .Site.Params.logoImage }}" class="w3-image w3-card w3-white w3-animate-opacity" style="max-width:200px;"></img></a>
   
       {{ "<!-- Small Logo -->" | safeHTML }}
       <div id="SmallLogo" class="w3-hide">
-        <a href="{{ "/" }}"><img src="/images/logo.png" class="w3-image w3-animate-opacity" style="max-width:60px;"></img></a>
+        <a href="{{ "/" }}"><img src="{{ .Site.Params.iconImage }}" class="w3-image w3-animate-opacity" style="max-width:60px;"></img></a>
 		    <a href="{{ "/" }}" class="fondamento sapling-theme-1 w3-animate-opacity" style="font-size:2vw;text-decoration:none;">  {{ .Site.Params.companyName }}</a>
       </div>
 
