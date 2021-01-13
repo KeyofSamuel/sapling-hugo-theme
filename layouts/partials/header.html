@@ -1,212 +1,97 @@
-<!-- Navbar (sit on top) -->
-
+{{ "<!-- Header -->" | safeHTML }}
 <div class="w3-container w3-top">
-
-  <div class="w3-container w3-row w3-stretch sapling-theme-2" style="max-height:40px">
-	  
-	  <div class="w3-container w3-half">
-		  
-		  <a class="w3-left w3-padding"> <i class="far fa-envelope"></i> Conveniently located in {{ .Site.Params.location }} </a>
-		  
-	  </div>
-	  
-	  <div class="w3-container w3-rest w3-stretch test-theme">
-		  
-		  {{ range .Site.Params.contact }}
-		  
-		  <a class="w3-right w3-padding"> <i class={{ .icon }}></i> {{ .contact }} </a>
-		  
-		  {{ end }}
-		  
-	  </div>
-  </div>
   
-  <div class="w3-container w3-row w3-stretch sapling-theme-1 w3-card-4" style="max-height:75px">
-	
-	  <div class="w3-container w3-half w3-padding-large w3-left">
-		<a class="fondamento sapling-theme-1" style="font-size:2.5vw;">  {{ .Site.Params.companyName }}</a>
-		<!--
-	  <a href="{{ "/" }}"><img src="/images/wo-logo_1.png" class="w3-image"></img></a>
-		-->
-	  </div>
-
-    <div class="w3-container w3-rest w3-padding w3-right">
-	
-      {{ range .Site.Menus.main }}
-        <a class="w3-btn w3-round-large sapling-theme-2 w3-card-4 sapling-theme-hover" style="font-size:1.5vw" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
- 
+  {{ "<!-- Contact Information Bar (sits on very top) -->" | safeHTML }}
+  <div class="w3-container w3-row w3-stretch sapling-theme-2" style="max-height:40px">
+    <div class="w3-container w3-half">
+	  <a class="w3-left w3-padding"> <i class="far fa-envelope"></i> Conveniently located in {{ .Site.Params.location }} </a>
+	</div>
+	<div class="w3-container w3-rest w3-stretch test-theme">
+      {{ range .Site.Params.contact }}
+        <a class="w3-right w3-padding"> <i class={{ .icon }}></i> {{ .contact }} </a>
       {{ end }}
     </div>
-
   </div>
 
-</div>
-
-<div class="w3-container test-theme">
-</div>
-
-
-      <!--
-<div id="topSize" class="w3-top w3-row w3-blue-theme sapling-text-dark w3-card-4" style="max-height:75px">
-
-  <div class="w3-container w3-quarter w3-padding-large w3-left">
-	
-  <a href="{{ "/" }}"><img src="/images/wo-logo_1.png" class="w3-image"></img></a>
-    
-  </div>
-    
-  <div class="w3-container w3-rest w3-padding w3-center">
-	
-	<div id="Demo">
-      <a class="sapling-text-light" style="font-size:1.1vw" >Contact Us!</a>
-	</div>
-    
-    {{ range .Site.Menus.main }}
- 
-      <a class="w3-button w3-green w3-hover-blue w3-round-large sapling-text-light" style="font-size:1.5vw" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
- 
-    {{ end }}
-  </div>
-    
-  <div class="w3-container w3-quarter w3-padding">
-    
-    <br />  
-	{{ range .Site.Menus.main }}
- 
-      <a class="w3-btn w3-circle sapling-text-light w3-right" style="font-size:1.5vw" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
- 
-    {{ end }}
-    
-  </div>
+  {{ "<!-- Title and Menu Bar -->" | safeHTML }}
+  <div class="w3-container w3-row w3-stretch sapling-theme-1 w3-card-4" style="max-height:60px">
   
+    {{ "<!-- Logos -->" | safeHTML }}
+    <div class="w3-container w3-half w3-padding-large w3-left">
+	  
+      {{ "<!-- Large Logo -->" | safeHTML }}
+      <a id="LargeLogo" href="{{ "/" }}"><img src="/images/logo.png" class="w3-image w3-card w3-white w3-animate-opacity" style="max-width:200px;"></img></a>
+  
+      {{ "<!-- Small Logo -->" | safeHTML }}
+      <div id="SmallLogo" class="w3-hide">
+        <a href="{{ "/" }}"><img src="/images/logo.png" class="w3-image w3-animate-opacity" style="max-width:60px;"></img></a>
+		    <a href="{{ "/" }}" class="fondamento sapling-theme-1 w3-animate-opacity" style="font-size:2vw;text-decoration:none;">  {{ .Site.Params.companyName }}</a>
+      </div>
+
+    </div>
+    
+    {{ "<!-- Menu -->" | safeHTML }}
+    <div class="w3-container w3-rest w3-padding w3-right" style="overflow:visible">
+      <div class="w3-container">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+              <div class="w3-dropdown-hover">
+                <div class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+                    <a class="w3-btn w3-round-large sapling-theme-2 sapling-theme-hover" style="font-size:1.2vw" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+                </div>
+                <div class="w3-dropdown-content w3-bar-block w3-animate-zoom">
+                  {{ range .Children }}
+                    <div class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                      <a href="{{ .URL }}" class="w3-bar-item w3-button sapling-theme-4 sapling-theme-hover w3-center">{{ .Name }}</a>
+                    </div>
+                  {{ end }}
+                </div>
+              </div>
+            {{ else }}
+                <a class="w3-btn w3-round-large sapling-theme-2 sapling-theme-hover" style="font-size:1.2vw" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+            {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  
+  </div>
+
 </div>
-	-->
-
-
-
-
 
 <script>
-// TRY THIS
+// Hidden Logo Script
 // When the user scrolls down 50px from the top of the document, resize the header's font size
 window.onscroll = function() {scrollFunction(),myShow()};
 
 function scrollFunction() {
-  var x = document.getElementById("Demo");
+  var x = document.getElementById("LargeLogo");
+  var y = document.getElementById("SmallLogo");
   
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById("topSize").style.maxHeight = "45px";
-    x.className += " w3-hide";
-  } 
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50)
+    {
+      if (x.className.indexOf("w3-hide") == -1) 
+        { 
+          x.className += " w3-hide";
+          y.className = x.className.replace(" w3-hide", "");
+        }
+    } 
   
-  else {
-    document.getElementById("topSize").style.maxHeight = "75px";
-    //x.className = x.className.replace(" w3-hide", "");
-    x.className -= " w3-hide";
-  }
-
+  else
+    {
+      x.className = x.className.replace(" w3-hide", "");
+      y.className += " w3-hide";
+    }
 }
 
-//window.onscroll = function() {myShow()};
-//function myShow() {
-//  var x = document.getElementById("Demo");
-//  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-	  
-//   if (x.className.indexOf("w3-hide") == -1) { 
-//      x.className += " w3-hide";
-//    } 
-  
-//    else {
-//      x.className = x.className.replace(" w3-hide", "");
-//    }
-  
-//  }
-//}
+// Clickable Menu Dropdown
+function MenuDropdown() {
+  var m = document.getElementById("MenuDrop");
+  if (m.className.indexOf("w3-show") == -1) {
+    m.className += " w3-show";
+  } else { 
+    m.className = m.className.replace(" w3-show", "");
+  }
+}
 
-//window.onscroll = function() {myShow()};
-//function myShow() {
-//  var x = document.getElementById("Demo");
-//  if (x.className.indexOf("w3-hide") == -1) { 
-//    x.className += " w3-hide";
-//  } else {
-//    x.className = x.className.replace(" w3-hide", "");
-//  }
-//}
-
-
-// Change style of navbar on scroll
-//window.onscroll = function() {myFunction()};
-//function myFunction() {
-//    var navbar = document.getElementById("myNavbar");
-//    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-//        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-//    } else {
-//        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-//    }
-//}
 </script>
-
-
-<!--
-  <a class="w3-jumbo sapling-blue w3-opacity">W</a><a class="w3-xxlarge">ONDER</a><a class="w3-xxxlarge"> O</a><a class="w3-xxlarge">f... Learning Center</a>
-
-<div class="w3-top w3-row w3-blue-theme sapling-text-dark w3-card-4 w3-border w3-yellow-border-theme">
-  <div class="w3-quarter spirax w3-padding w3-center">
-  <a class="w3-jumbo">W</a><a class="w3-xxlarge">ONDER</a><a class="w3-xxxlarge"> O</a><a class="w3-xxlarge">f... Learning Center</a>
-  </div>
-
-  <div class="w3-container w3-rest">
-  
-    <p class="w3-xlarge w3-right"> Place contact Information Here </p>
-  <br />
-    {{ range .Site.Menus.main }}
- 
-      <p class="w3-button sapling-text-dark w3-right w3-xxlarge" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</p>
- 
-    {{ end }}
-
-  
-  </div>
-
-</div>
-
-
-  <div class="w3-bar w3-card w3-animate-top w3-white" id="myNavbar">
-
-  <div class="w3-container w3-half stdFont">
-  <img src="/images/wo-logo_1.png" class="w3-image"></img>
-  <a class="stdFont" style="font-size:3vw;">Wonder of...Learning Center</a>
-  </div>
-
-  <div class="w3-container w3-half">
-    <div class="w3-right">
-    Call Us: 555.555.5555
-    </div>
-    <br />
-    <a href="#home" class="w3-bar-item w3-button w3-right">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small w3-right"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small w3-right"><i class="fa fa-th"></i> PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-right"><i class="fa fa-envelope"></i> CONTACT</a>
-  </div>
-  
-  
-    <!-- Navbar hamburger menu for small screens (sit on top)
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
-     -->
-
-  <!-- Navbar menu items on small screens 
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
-  </div>
-  
-  </div>
-
-
-</div>
-  -->
-
