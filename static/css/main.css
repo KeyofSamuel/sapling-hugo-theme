@@ -4,7 +4,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 .stdFont {font-family: "Roboto", sans-serif;}
 
-.fondamento{font-family: "Fondamento";}
+.fondamento{font-family: "Fondamento", cursive;}
+
 
 .rochester{font-family: 'Rochester', cursive;}
 .butterflykids{font-family: 'Butterfly Kids', cursive;}
@@ -12,6 +13,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 .greatvibes{font-family: 'Great Vibes', cursive;}
 .amita{font-family: 'Amita', cursive;}
 
+
+.post-title {
+  font-size:2vw;
+}
 
 .sapling-blue {background-color:#43b5a0 !important}
 .sapling-pink {background-color:#d8065a !important}
