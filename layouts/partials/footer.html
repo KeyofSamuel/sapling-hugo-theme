@@ -1,0 +1,34 @@
+<div class="w3-container w3-row sapling-theme-2">
+  &nbsp;
+</div>
+<div class="w3-container w3-row sapling-theme-1 w3-padding-32">
+
+  <div class="w3-col m8">
+
+    <span class="fondamento sapling-text-dark" style="font-size:2vw">
+    {{ .Site.Params.footer.name }}  
+    </span>
+    <br />
+    <span style="font-size:1.5vw">
+    {{ .Site.Params.footer.description }}  
+    </span>
+    <br />
+    <span style="font-size:1vw">
+    Copyright: <script>document.write(new Date().getFullYear())</script>. 
+    Powered by Hugo. See the <a href="{{ "/about" | relURL}}">ABOUT</a> page for site details.
+    </span>
+	  
+  </div>
+
+  <div class="w3-col m4 w3-center">
+
+    {{ range .Site.Params.footer.links }}
+      <a class="w3-button sapling-theme-hover w3-padding" href="{{ .url | safeURL }}">
+        <i class="{{ .icon }}"></i>
+        {{ .name }}
+      </a>
+    {{ end }}
+  
+  </div>
+
+</div>
