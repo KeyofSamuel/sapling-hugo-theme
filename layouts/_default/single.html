@@ -1,67 +1,87 @@
 {{ define "main" }}
 
-<div class="container">
+{{ "<!-- Home Image with Logo Text -->" | safeHTML }}
+<div class="w3-display-container" style="max-height:600px; overflow:hidden;">
 
-  <p>This is the default single page template</p>
+  {{ "<!-- Hero Image -->" | safeHTML }}
+  <img src="{{ .Site.Params.siteImage }}" class="w3-image">
+
+  <div class="w3-container w3-display-bottomright cc-std-font w3-text-black w3-large">
+    <p>{{ with .Site.Params.siteImageCredit }}<span>Photo Credit: <b>{{ . }}</b></span>{{ end }}</p>
+  </div>
 
 </div>
 
-<!-- Sidebar -->
-<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:20%; position:fixed">
-  <h3 class="w3-bar-item">Menu</h3>
-  <a href="#" class="w3-bar-item w3-button">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+<div class="w3-container" style="margin-left:10%">
+
+  <div class="w3-text-theme w3-border-bottom w3-padding-large w3-white" style="font-size:4vw">{{ .Page.Params.title }}</div>
   
-  {{ range .Site.Params.socialIcon }}
-                    
-  <a href="{{ .url | safeURL }}"><i class="w3-bar-item w3-button {{ .icon }}"> {{ .name }} </i></a>
-                    
-  {{ end }}
+  <div class="w3-text-theme w3-white w3-padding-large">{{ .Content }}</div>
 
 </div>
 
-<!-- Page Content -->
-<div style="margin-left:20%">
 
-<div class="w3-container w3-teal">
-  <h1>My Page</h1>
+<!-- Sidebar/menu 
+
+<div class="w3-sidebar" style="z-index:3;width:20%;font-weight:bold;" id="mySidebar"><br>
+  
+  <div class="w3-bar-block">
+
+    <div class="w3-container w3-padding w3-large cc-hero-font">
+      <b>{{ .Site.Params.biosidebar.name }}</b><br/>
+    </div>
+    
+    <div class="w3-container w3-padding w3-medium cc-std-font">
+      {{ .Site.Params.biosidebar.description }}<br/>
+    </div>
+    
+    <div class="w3-container w3-padding cc-std-font">
+
+      {{ range .Site.Params.biosidebar.links }}
+        <a class="w3-button w3-hover-theme w3-padding" href="{{ .url | safeURL }}">
+        <i class="{{ .icon }}"></i> {{ .name }} </a>
+        <br/>
+      {{ end }}
+  
+    </div>
+
+    
+  </div>
 </div>
 
-<div class="w3-card-2 w3-right w3-blue w3-padding"><aside>
-        {{ .TableOfContents }}
-    </aside></div>
+<div class="w3-row" style="margin-left:20%">
+
+  <div class="w3-col m2 w3-text-theme">
+    
+    <div class="w3-container w3-padding w3-large cc-hero-font">
+      <b>{{ .Site.Params.biosidebar.name }}</b><br/>
+    </div>
+    
+    <div class="w3-container w3-padding w3-medium cc-std-font">
+      {{ .Site.Params.biosidebar.description }}<br/>
+    </div>
+    
+    <div class="w3-container w3-padding cc-std-font">
+
+      {{ range .Site.Params.biosidebar.links }}
+        <a class="w3-button w3-hover-theme w3-padding" href="{{ .url | safeURL }}">
+        <i class="{{ .icon }}"></i> {{ .name }} </a>
+        <br/>
+      {{ end }}
+  
+    </div>
+
+  </div>
+
+  <div class="w3-container w3-col m8">
+
+    <h2 class="cc-hero-font w3-text-theme w3-xxxlarge">{{ .Page.Params.title }}</h2>
+    
+    <div class="cc-std-font w3-large w3-text-theme">{{ .Content }}</div>
+  
+  </div>
+
 </div>
 
-</header>
-        {{ .Content }}
-    </article>
-    <aside>
-        {{ .TableOfContents }}
-    </aside>
-
-<img src="img_car.jpg" alt="Car" style="width:100%">
-<div class="w3-right w3-blue w3-padding">w3-right</div>
-<div class="w3-container">
-<h2>Sidebar Navigation Example</h2>
-<p>The sidebar with is set with "style="width:25%".</p>
-<p>The left margin of the page content is set to the same value.</p>
-<p>The left margin of the page content is set to the same value.</p>
-<p>The left margin of the page content is set to the same value.</p>
-<p>The left margin of the page content is set to the same value.</p>
-<p>The left margin of the page content is set to the same value.</p>
-<p>The left margin of the page content is set to the same value.</p>
-<p>The left margin of the page content is set to the same value.</p>
-<p>The left margin of the page content is set to the same value.</p>
-<p>The left margin of the page content is set to the same value.</p>
-<p>The left margin of the page content is set to the same value.</p>
-<p>The left margin of the page content is set to the same value.</p>
-<p>The left margin of the page content is set to the same value.</p>
-
-{{ range .Site.Params.socialIcon }}
-                    
-                    <a href="{{ .url | safeURL }}"><i class="{{ .icon }}"></i></a>
-                    
-                    {{ end }}
-
+-->
 {{ end }}
