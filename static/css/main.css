@@ -13,6 +13,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 .greatvibes{font-family: 'Great Vibes', cursive;}
 .amita{font-family: 'Amita', cursive;}
 
+# Alternating room images
+#This seems necessary to create the section block for nth-child to work properly
+.section { }
+.rooms section:nth-child(odd) .room_img{
+     float:left;
+}
+.rooms section:nth-child(even) .room_img{
+     float:right;
+}
 
 .post-title {
   font-size:2vw;
@@ -21,8 +30,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 .sapling-blue {background-color:#43b5a0 !important}
 .sapling-pink {background-color:#d8065a !important}
 .sapling-yellow {background-color:#febb36 !important}
-.sapling-text-dark {color:#331a38 !important}
-.sapling-text-light {color:#f5edf7 !important}
+
+.sapling-text-dark {color:#28000b !important}
+.sapling-text-light {color:#fdedb9 !important}
 
 .sapling-theme-1 {color:#28000b !important; background-color:#4dafa8 !important}
 .sapling-theme-2 {color:#fdedb9 !important; background-color:#860326 !important}

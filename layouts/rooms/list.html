@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+<div class="w3-display-container" style="max-height:600px;overflow:hidden;">
+
+  {{ "<!-- Hero Image -->" | safeHTML }}
+  <img src="{{ .Site.Params.siteImage }}" class="w3-image">
+  
+  {{ "<!-- Hero Image Credit -->" | safeHTML }}
+  <div class="w3-container w3-display-bottomright w3-text-black w3-large">
+    <p>{{ with .Site.Params.siteImageCredit }}<span>Photo Credit: <b>{{ . }}</b></span>{{ end }}</p>
+  </div>
+
+</div>
+
+
+{{ "<!-- Page Heading -->" | safeHTML }}
+<div class="w3-container w3-center">
+    <span class="w3-text-theme w3-border-bottom" style="font-size:4vw;"> {{ .Site.Params.blogtitle }} </span>
+    <!-- <span class="w3-text-theme">{{ .Summary }}</span> -->
+</div>
+
+{{ "<!-- Room List -->" | safeHTML }}
+<div class="w3-container w3-padding rooms">
+{{ range .Pages.ByWeight  }}
+    
+  <section style="min-height:300px;">
+    <div class="room_img"><img src="{{ .Params.Image }}" class="w3-padding-large" style="max-width:300px"></div>
+    <div class="w3-padding-large">
+      <a href="{{ .Permalink }}" style="font-size:2vw">{{ .Title }}</a>
+
+      <p>{{ .Summary }}</p>
+    </div>
+  </section>
+  
+{{ end }}
+</div>
+
+{{ end }}
