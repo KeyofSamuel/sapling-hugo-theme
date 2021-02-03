@@ -1,0 +1,53 @@
+{{ "<!-- Accreditations and Accolades -->" | safeHTML }}
+{{ if .Site.Params.awards.enable }}
+
+<div class="w3-container w3-stretch sapling-theme-2">
+	<a>&nbsp;</a>
+</div>	
+<div class="w3-container w3-stretch sapling-theme-1 w3-center">
+	<a>&nbsp;</a><br />
+  <a class="" style="font-size:2vw">Awards and Accolades</a>
+  <br /><a>&nbsp;</a>
+</div>	
+<div class="w3-container w3-stretch sapling-theme-2">
+	<a>&nbsp;</a>
+</div>	
+
+<div class="w3-container sapling-theme-2">
+  {{range ( where site.RegularPages "Type" "award") }}
+  
+  <div class="awardSlides w3-container w3-row w3-padding-large w3-white" style="min-height:300px">
+    
+    <div class="w3-container w3-half w3-center">
+    <img src="{{ .Params.Image }}" class="sapling-text-dark" style="max-width:300px">
+    </div>
+    
+    <div class="w3-container w3-half w3-center">
+    <a href="{{ .Permalink }}" class="sapling-text-dark post-title">{{ .Title }}</a>
+    <br />
+    <a class="sapling-text-dark">{{ .Content }}</a>
+    </div>
+    
+  </div>
+  {{ end }}
+</div>
+  
+<script>
+// Automatic Slideshow - change image every 8 seconds
+var awardIndex = 0;
+awardSlider();
+
+function awardSlider() {
+  var i;
+  var x = document.getElementsByClassName("awardSlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  awardIndex++;
+  if (awardIndex > x.length) {awardIndex = 1}    
+  x[awardIndex-1].style.display = "block";  
+  setTimeout(awardSlider, 8000);    
+}
+
+</script>
+{{ end }}
