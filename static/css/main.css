@@ -1,36 +1,11 @@
+# General Options
 body, html {height: 100%}
+a,body,div,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
-body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-
-.stdFont {font-family: "Roboto", sans-serif;}
-
+# Fonts
 .fondamento{font-family: "Fondamento", cursive;}
 
-
-.rochester{font-family: 'Rochester', cursive;}
-.butterflykids{font-family: 'Butterfly Kids', cursive;}
-.cherryswash{font-family: 'Cherry Swash', cursive;}
-.greatvibes{font-family: 'Great Vibes', cursive;}
-.amita{font-family: 'Amita', cursive;}
-
-# Alternating room images
-#This seems necessary to create the section block for nth-child to work properly
-.section { }
-.rooms section:nth-child(odd) .room_img{
-     float:left;
-}
-.rooms section:nth-child(even) .room_img{
-     float:right;
-}
-
-.post-title {
-  font-size:2vw;
-}
-
-.sapling-blue {background-color:#43b5a0 !important}
-.sapling-pink {background-color:#d8065a !important}
-.sapling-yellow {background-color:#febb36 !important}
-
+# Theme Colors
 .sapling-text-dark {color:#28000b !important}
 .sapling-text-light {color:#fdedb9 !important}
 
@@ -43,6 +18,31 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   border-style: solid;
   border-color: #28000b;
 }
+
+# Alternating room images
+#This seems necessary to create the section block for nth-child to work properly
+.section { }
+.rooms section:nth-child(odd) .room_img{
+     float:left;
+}
+.rooms section:nth-child(even) .room_img{
+     float:right;
+}
+
+
+
+
+
+
+
+.post-title {
+  font-size:2vw;
+}
+
+.sapling-blue {background-color:#43b5a0 !important}
+.sapling-pink {background-color:#d8065a !important}
+.sapling-yellow {background-color:#febb36 !important}
+
 
 # Blue/Teal
 .test-theme {color:#000 !important; background-color:#d2112c !important}
