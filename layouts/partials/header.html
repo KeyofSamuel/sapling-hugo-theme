@@ -4,7 +4,7 @@
   {{ "<!-- Contact Information Bar (sits on very top) -->" | safeHTML }}
   <div class="w3-container w3-row w3-stretch sapling-theme-2" style="max-height:40px">
     <div class="w3-container w3-half">
-	  <a class="w3-left w3-padding"> <i class="far fa-envelope"></i> Conveniently located in {{ .Site.Params.location }} </a>
+	  <a class="w3-left w3-padding"> <i class="fas fa-map-marker-alt"></i> Conveniently located: {{ .Site.Params.location }} </a>
 	</div>
 	<div class="w3-container w3-rest w3-stretch test-theme">
       {{ range .Site.Params.contact }}

@@ -6,16 +6,19 @@
   <div class="w3-col m8">
 
     <span class="fondamento sapling-text-dark" style="font-size:2vw">
-    {{ .Site.Params.footer.name }}  
+    {{ .Site.Params.companyName }}  
+    </span>
+    <br />
+    <span class="sapling-text-dark" style="font-size:1.5vw">
+    {{ .Site.Params.streetaddress }}  
+    </span>
+    <br />
+    <span class="sapling-text-dark" style="font-size:1.5vw">
+    {{ .Site.Params.city }}  
     </span>
     <br />
     <span style="font-size:1.5vw">
     {{ .Site.Params.footer.description }}  
-    </span>
-    <br />
-    <span style="font-size:1vw">
-    Copyright: <script>document.write(new Date().getFullYear())</script>. 
-    Powered by Hugo. See the <a href="{{ "/about" | relURL}}">ABOUT</a> page for site details.
     </span>
 	  
   </div>
@@ -29,6 +32,11 @@
       </a>
     {{ end }}
   
+    <br />
+    <span style="font-size:1vw">
+    Copyright: <script>document.write(new Date().getFullYear())</script>. 
+    Powered by Hugo. See the <a href="{{ "/site" | relURL}}">SITE</a> page for site details.
+    </span>
   </div>
 
 </div>
