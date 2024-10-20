@@ -3,7 +3,7 @@
 </div>
 <div class="w3-container w3-row sapling-theme-1 w3-padding-32">
 
-  <div class="w3-col m8">
+  <div class="w3-col m4">
 
     <span class="fondamento sapling-text-dark" style="font-size:2vw">
     {{ .Site.Params.companyName }}  
@@ -23,6 +23,18 @@
 	  
   </div>
 
+  <div class="w3col m4 wc-center">
+
+    For More Information!
+    <br />
+    Contact us at:
+    <br />
+    {{ range .Site.Params.contact }}
+      <a class="w3-center w3-padding"> <i class={{ .icon }}></i> {{ .contact }} </a>
+    {{ end }}
+
+  </div>
+
   <div class="w3-col m4 w3-center">
 
     {{ range .Site.Params.footer.links }}
@@ -32,11 +44,4 @@
       </a>
     {{ end }}
   
-    <br />
-    <span style="font-size:1vw">
-    Copyright: <script>document.write(new Date().getFullYear())</script>. 
-    Powered by Hugo. See the <a href="{{ "/site" | relURL}}">SITE</a> page for site details.
-    </span>
-  </div>
-
 </div>
