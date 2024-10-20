@@ -3,33 +3,8 @@
 	<a>&nbsp;</a>
 </div>	
 
-{{ "<!-- Index Body -->" | safeHTML }}
-<div class="w3-row">
-  <div class="w3-container w3-third w3-card-4 w3-center">
-    <div class="w3-container w3-stretch w3-padding-large sapling-theme-1 sapling-text-dark" style="font-size:2vw">Current Events</div>
-    
-      {{ "<!-- Events -->" | safeHTML }}
-      <div class="w3-container w3-stretch">
-        {{range ( where site.RegularPages "Section" "events" | first 5 ) }}
-          <div>
-            <div class="post-title sapling-text-dark">
-              <a href="{{ .Permalink }}">{{ .Title }}</a>
-              </div>
-          </div>
-          
-          <div>
-            {{ partial "current_events.html" . }}
-          </div>
-          <div class="post-item post-summary markdown-body">
-            {{ .Summary }}
-          </div>
-        {{ end }}
-      </div>
-
-  </div>
-
   {{ "<!-- About-Us -->" | safeHTML }}
-  <div class="w3-container w3-padding-large w3-center w3-rest sapling-text-dark">
+  <div class="w3-container w3-padding-large w3-center sapling-text-dark">
     {{ with .Site.GetPage "/sitepages/about-index.md" }}
     <a class="w3-padding-large" style="font-size:2vw">{{ .Content }}</a>
     {{ end }}
