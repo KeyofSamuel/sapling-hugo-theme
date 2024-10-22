@@ -22,12 +22,6 @@
       {{ "<!-- Large Logo -->" | safeHTML }}
       <a id="LargeLogo" href="{{ "/" }}"><img src="{{ .Site.Params.logoImage }}" class="w3-image w3-card w3-white w3-animate-opacity" style="max-width:200px;"></img></a>
   
-      {{ "<!-- Small Logo -->" | safeHTML }}
-      <div id="SmallLogo" class="w3-hide">
-        <a href="{{ "/" }}"><img src="{{ .Site.Params.iconImage }}" class="w3-image w3-animate-opacity" style="max-width:60px;"></img></a>
-		    <a href="{{ "/" }}" class="fondamento sapling-theme-1 w3-animate-opacity" style="font-size:2vw;text-decoration:none;">  {{ .Site.Params.companyName }}</a>
-      </div>
-
     </div>
     
     {{ "<!-- Menu -->" | safeHTML }}
@@ -60,30 +54,6 @@
 </div>
 
 <script>
-// Hidden Logo Script
-// When the user scrolls down 50px from the top of the document, resize the header's font size
-window.onscroll = function() {scrollFunction(),myShow()};
-
-function scrollFunction() {
-  var x = document.getElementById("LargeLogo");
-  var y = document.getElementById("SmallLogo");
-  
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50)
-    {
-      if (x.className.indexOf("w3-hide") == -1) 
-        { 
-          x.className += " w3-hide";
-          y.className = x.className.replace(" w3-hide", "");
-        }
-    } 
-  
-  else
-    {
-      x.className = x.className.replace(" w3-hide", "");
-      y.className += " w3-hide";
-    }
-}
-
 // Clickable Menu Dropdown
 function MenuDropdown() {
   var m = document.getElementById("MenuDrop");
